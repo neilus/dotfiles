@@ -41,6 +41,9 @@ map <c-h> <c-w>h
 vnoremap < <gv  " better indentation
 vnoremap > >gv  " better indentation
 
+" attempt to show whitespaces
+set listchars=eol:¶,tab:->,trail:.,extends:>,precedes:<
+set list
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
 autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
@@ -51,17 +54,36 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 " wget -O wombat256mod.vim http://www.vim.org/scripts/download_script.php?src_id=13400
 set t_Co=256
 color wombat256mod
+
+" whitespaces?
+"highlight Search cterm=underline gui=underline ctermbg=233 guibg=none ctermfg=none guifg=none
+"set hls
+"let g:HLSpace = 1
+""let g:HLColorScheme = g:colors_name
+"
+"function ToggleSpacesWithUnderscors()
+"    if g:HLSpace
+"        highlight Search cterm=underline gui=underline ctermbg=233  guibg=none ctermfg=none guifg=none
+"        let @/ = " "
+"      else
+"        highlight clear
+"        silent colorscheme "".g:HLColorScheme
+"        let @/ = ""
+"    endif
+"    let g:HLSpace = !g:HLSpace
+"endfunction
+"nmap <silent>  <F3> <Esc>:call ToggleSpacesWithUnderscors()<CR>
+
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype off
 filetype plugin indent on
 syntax on
 
-
 " Showing line numbers and length
 set number  " show line numbers
 set tw=79   " width of document (used by gd)
-set nowrap  " don't automatically wrap on load
+set wrap  " don't automatically wrap on load
 set fo-=t   " don't automatically wrap text when typing
 set colorcolumn=80
 highlight ColorColumn ctermbg=233
@@ -69,20 +91,21 @@ highlight ColorColumn ctermbg=233
 " Useful settings
 set history=700
 set undolevels=700
-
 " Real programmers don't use TABs but spaces
-set tabstop=4
-set softtabstop=4
-set shiftwidth=4
+set tabstop=2
+set softtabstop=2
+set shiftwidth=2
 set shiftround
 set expandtab
+nmap <silent> <F3> <Esc>:set noexpandtab<CR>
+nmap <silent> <F4> <Esc>:set expandtab<CR>
+
 
 " Make search case insensitive
 set hlsearch
 set incsearch
 set ignorecase
 set smartcase
-
 " Disable stupid backup and swap files - they trigger too many events
 " for file system watchers
 set nobackup
@@ -94,7 +117,7 @@ set noswapfile
 "set nocompatible               " be iMproved
 filetype off                   " required!
 
-set rtp+=~/.vim/vundle.git/ 
+set rtp+=~/.vim/vundle.git/
 call vundle#rc()
 
 " let Vundle manage Vundle
