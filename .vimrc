@@ -132,6 +132,10 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'rails.vim'
+Bundle 'neilus/vim-creole'
+Bundle 'vim-scripts/VimClojure'
+Bundle 'vim-scripts/taglist.vim'
+Bundle 'vim-scripts/vimwiki'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
