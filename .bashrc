@@ -209,3 +209,5 @@ alias vim='gvim -v '
 alias emacs='emacs -nw'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
 export PATH=./*/bin:$PATH 
+export JAVA_HOME=/usr/java/jdk1.7.0_25
+

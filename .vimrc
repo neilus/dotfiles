@@ -96,10 +96,9 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set shiftround
-set expandtab
+"set expandtab
 nmap <silent> <F3> <Esc>:set noexpandtab<CR>
 nmap <silent> <F4> <Esc>:set expandtab<CR>
-
 
 " Make search case insensitive
 set hlsearch
@@ -135,7 +134,9 @@ Bundle 'rails.vim'
 Bundle 'neilus/vim-creole'
 Bundle 'vim-scripts/VimClojure'
 Bundle 'vim-scripts/taglist.vim'
-Bundle 'vim-scripts/vimwiki'
+"""Bundle 'vim-scripts/vimwiki'
+"""Bundle 'vim-scripts/vim-wakatime'
+"""Bundle 'wakatime/vim-wakatime'
 " non github repos
 Bundle 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
@@ -152,6 +153,16 @@ Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 
 Bundle 'scrooloose/syntastic'
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+" " https://python-guide.readthedocs.org/en/latest/dev/env/
+" """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+let g:syntastic_auto_loc_list=1
+let g:syntastic_loc_list_height=5
 
 "" as python IDE
 Bundle 'Lokaltog/vim-powerline'
