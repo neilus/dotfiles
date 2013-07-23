@@ -151,6 +151,9 @@ filetype plugin indent on     " required!
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
+Bundle 'elzr/vim-json'
+
+au! BufRead,BufNewFile *.json set filetype=json
 
 Bundle 'scrooloose/syntastic'
 
