@@ -1,7 +1,8 @@
 
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
-
+" higlight the line where the cursor is
+set cursorline
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
 " paste. At the bottom you should see ``-- INSERT (paste) --``.
@@ -11,7 +12,7 @@ set clipboard=unnamed
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
 set bs=2     " make backspace behave like normal again
- 
+
 
 " Rebind <Leader> key
 " I like to have it here becuase it is easier to reach than the default and
