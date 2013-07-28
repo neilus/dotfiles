@@ -196,8 +196,15 @@ fi
 # }
 # 
 # alias cd=cd_func
-source ~/.git-completion.sh
-source ~/.git-prompt.sh
+if [ -f "/etc/bashrc" ]; then
+  source "/etc/bashrc"
+fi
+if [ -f "~/.git-bash_completion" ]; then
+  source "~/.git-completion.sh"
+fi
+if [ -f "~/.git-prompt.sh" ]; then
+  source "~/.git-prompt.sh"
+fi
 
 alias ls='ls --color -hF'
 PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;30m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
