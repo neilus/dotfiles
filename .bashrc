@@ -199,11 +199,11 @@ fi
 if [ -f "/etc/bashrc" ]; then
   source "/etc/bashrc"
 fi
-if [ -f "~/.git-bash_completion" ]; then
-  source "~/.git-completion.sh"
+if [ -f "${HOME}/.git-bash_completion" ]; then
+  source ~/.git-completion.sh
 fi
-if [ -f "~/.git-prompt.sh" ]; then
-  source "~/.git-prompt.sh"
+if [ -f "${HOME}/.git-prompt.sh" ]; then
+  source ~/.git-prompt.sh
 fi
 
 alias ls='ls --color -hF'
@@ -216,5 +216,5 @@ alias vim='gvim -v '
 alias emacs='emacs -nw'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
 export PATH=./*/bin:$PATH 
-export JAVA_HOME=/usr/java/jdk1.7.0_25
+#export JAVA_HOME=/usr/java/jdk1.7.0_25
 
