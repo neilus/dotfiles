@@ -97,7 +97,7 @@ set tabstop=2
 set softtabstop=2
 set shiftwidth=2
 set shiftround
-"set expandtab
+set expandtab
 nmap <silent> <F3> <Esc>:set noexpandtab<CR>
 nmap <silent> <F4> <Esc>:set expandtab<CR>
 
