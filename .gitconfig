@@ -7,4 +7,4 @@
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
 	gog = log  --graph --color --decorate
 [push]
-	default = simple
+	default = nothing
