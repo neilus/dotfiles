@@ -217,4 +217,8 @@ alias emacs='emacs -nw'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
 export PATH=./*/bin:$PATH 
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
+export malachi='00:19:66:87:0c:78' ##'00:04:2e:00:cf:ba'
+export samson='F0:DE:F1:D1:DC:F8'
+export lizzy='00:1F:16:26:81:19'
+alias ls='ls -Fh --color'
 
