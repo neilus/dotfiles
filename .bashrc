@@ -214,7 +214,10 @@ alias gshell='gnome-shell --sm-disable --replace -d :1'
 alias devshell='kefir gshell'
 alias vim='gvim -v '
 alias emacs='emacs -nw'
+# rotating the tablet on my tabletPC
+alias wacom_normal='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none'
+alias wacom_inverted='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
-export PATH=./*/bin:$PATH 
+export PATH=~/bin:./*/bin:$PATH 
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
