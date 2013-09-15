@@ -149,7 +149,7 @@ filetype plugin indent on     " required!
 " filetype plugin on          " to not use the indentation settings set by plugins
 
 "" YCM aka intellisense
-Bundle 'Valloric/YouCompleteMe'
+"Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'
