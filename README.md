@@ -4,9 +4,10 @@ to install and set up as I have issue:
 [ you @ your_machine ~ ]$ git init
 [ you @ your_machine ~ ]$ git remote add origin git@github.com:neilus/dotfiles.git
 [ you @ your_machine ~ ]$ git stash
-[ you @ your_machine ~ ]$ git pull --all
+[ you @ your_machine ~ ]$ git pull --all -f
 [ you @ your_machine ~ ]$ git submodule init
 [ you @ your_machine ~ ]$ git submodule update
+[ you @ your_machine ~ ]$ git push -u origin master
 ```
 
 If you don't have a github account set up at your_machine, then use the https
