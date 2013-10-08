@@ -9,6 +9,9 @@ set cursorline
 set pastetoggle=<F2>
 set clipboard=unnamed
 
+" Markdown support
+au BufRead,BufNewFile *.md set filetype=markdown
+au BufRead,BufNewFile *.markdownd set filetype=markdown
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
 set bs=2     " make backspace behave like normal again
@@ -128,6 +131,12 @@ Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
 Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
+
+
+" org-mode...
+"Bundle 'hsitz/VimOrganizer'
+Bundle 'jceb/vim-orgmode'
+
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -149,7 +158,7 @@ filetype plugin indent on     " required!
 " filetype plugin on          " to not use the indentation settings set by plugins
 
 "" YCM aka intellisense
-"Bundle 'Valloric/YouCompleteMe'
+Bundle 'Valloric/YouCompleteMe'
 Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'
