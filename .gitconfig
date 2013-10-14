@@ -1,10 +1,10 @@
 [user]
 	name = Norbert Sana
-	email = neilus@elte.hu
+	email = neilus@icss.hu
 [color]
 	ui = true
 [alias]
 	lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
-	gog = log  --graph --color --decorate
+	gog = log  --graph --color --decorate --all
 [push]
 	default = nothing

@@ -1,3 +1,9 @@
 [submodule ".vim/vundle.git"]
 	path = .vim/vundle.git
 	url = http://github.com/gmarik/vundle.git
+[submodule ".emacs.d/org-mode"]
+	path = .emacs.d/org-mode
+	url = git://orgmode.org/org-mode.git
+[submodule ".emacs.d/org-reveal"]
+	path = .emacs.d/org-reveal
+	url = https://github.com/yjwen/org-reveal.git
