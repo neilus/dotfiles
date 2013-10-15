@@ -209,9 +209,6 @@ fi
 alias ls='ls --color -hF'
 PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;30m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
 
-alias kefir='nohup Xephyr -screen 960x1020 :1 &'
-alias gshell='gnome-shell --sm-disable --replace -d :1'
-alias devshell='kefir gshell'
 alias vim='gvim -v '
 alias emacs='emacs -nw'
 # rotating the tablet on my tabletPC
