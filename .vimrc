@@ -136,6 +136,7 @@ Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
 " org-mode...
 "Bundle 'hsitz/VimOrganizer'
 Bundle 'jceb/vim-orgmode'
+Bundle 'vim-scripts/speeddating.vim'
 
 " vim-scripts repos
 Bundle 'L9'
