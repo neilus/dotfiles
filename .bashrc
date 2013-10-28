@@ -132,13 +132,13 @@ fi
 # Some example functions:
 #
 # a) function settitle
-# settitle () 
-# { 
-#   echo -ne "\e]2;$@\a\e]1;$@\a"; 
+# settitle ()
+# {
+#   echo -ne "\e]2;$@\a\e]1;$@\a";
 # }
-# 
+#
 # b) function cd_func
-# This function defines a 'cd' replacement function capable of keeping, 
+# This function defines a 'cd' replacement function capable of keeping,
 # displaying and accessing history of visited directories, up to 10 entries.
 # To use it, uncomment it, source this file and try 'cd --'.
 # acd_func 1.0.5, 10-nov-2004
@@ -147,15 +147,15 @@ fi
 # {
 #   local x2 the_new_dir adir index
 #   local -i cnt
-# 
+#
 #   if [[ $1 ==  "--" ]]; then
 #     dirs -v
 #     return 0
 #   fi
-# 
+#
 #   the_new_dir=$1
 #   [[ -z $1 ]] && the_new_dir=$HOME
-# 
+#
 #   if [[ ${the_new_dir:0:1} == '-' ]]; then
 #     #
 #     # Extract dir N from dirs
@@ -165,21 +165,21 @@ fi
 #     [[ -z $adir ]] && return 1
 #     the_new_dir=$adir
 #   fi
-# 
+#
 #   #
 #   # '~' has to be substituted by ${HOME}
 #   [[ ${the_new_dir:0:1} == '~' ]] && the_new_dir="${HOME}${the_new_dir:1}"
-# 
+#
 #   #
 #   # Now change to the new dir and add to the top of the stack
 #   pushd "${the_new_dir}" > /dev/null
 #   [[ $? -ne 0 ]] && return 1
 #   the_new_dir=$(pwd)
-# 
+#
 #   #
 #   # Trim down everything beyond 11th entry
 #   popd -n +11 2>/dev/null 1>/dev/null
-# 
+#
 #   #
 #   # Remove any other occurence of this dir, skipping the top of the stack
 #   for ((cnt=1; cnt <= 10; cnt++)); do
@@ -191,10 +191,10 @@ fi
 #       cnt=cnt-1
 #     fi
 #   done
-# 
+#
 #   return 0
 # }
-# 
+#
 # alias cd=cd_func
 if [ -f "/etc/bashrc" ]; then
   source "/etc/bashrc"
@@ -213,11 +213,15 @@ alias kefir='nohup Xephyr -screen 960x1020 :1 &'
 alias gshell='gnome-shell --sm-disable --replace -d :1'
 alias devshell='kefir gshell'
 alias vim='gvim -v '
-alias emacs='emacs -nw'
+function whichemacs(){
+  /usr/bin/emacsclient -n $@ >>/dev/null 2>/dev/null || /usr/bin/emacs $@;
+}
+alias emacs=whichemacs
+alias emacsclient='emacsclient -n'
 # rotating the tablet on my tabletPC
 alias wacom_normal='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none'
 alias wacom_inverted='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
-export PATH=~/bin:./*/bin:$PATH 
+export PATH=~/bin:./*/bin:$PATH
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
