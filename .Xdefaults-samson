@@ -1,0 +1,56 @@
+x3270.keymap:linux
+x3270.keymap.linux: \
+        Shift<Key>odoubleacute: Key(0xd5)\n\
+        <Key>odoubleacute:      Key(0xf5)\n\
+        Shift<Key>udoubleacute: Key(0xdb)\n\
+        <Key>udoubleacute:      Key(0xfb)\n\
+        <Key>Control_R:         Enter()\n\
+        <Key>Pause:             Clear()\n\
+        Shift<Key>F1:           PF(13)\n\
+        Shift<Key>F2:           PF(14)\n\
+        Shift<Key>F3:           PF(15)\n\
+        Shift<Key>F4:           PF(16)\n\
+        Shift<Key>F5:           PF(17)\n\
+        Shift<Key>F6:           PF(18)\n\
+        Shift<Key>F7:           PF(19)\n\
+        Shift<Key>F8:           PF(20)\n\
+        Shift<Key>F9:           PF(21)\n\
+        Shift<Key>F10:          PF(22)\n\
+        Shift<Key>F11:          PF(23)\n\
+        Shift<Key>F12:          PF(24)\n\
+        Alt<Key>Prior:          PA(1)\n\
+        Alt<Key>Next:           PA(2)\n\
+        Alt<Key>Home:           PA(3)\n\
+        Shift<Key>Next:         PA(3)\n\
+        Shift<Key>Insert:       Dup()\n\
+        Alt<Key>End:            EraseInput()\n\
+        Alt<Key>Right:          Right2()\n\
+        Alt<Key>Left:           Left2()\n\
+        <Key>Prior:             PF(7)\n\
+        <Key>Next:              PF(8)\n\
+        !<Key>KP_6:             String("6")\n\
+        !<Key>KP_Right:         Right()\n\
+        !<Key>KP_Left:          Left()\n\
+        !<Key>KP_Prior:         PA(1)\n\
+        !<Key>KP_Next:          PA(2)\n\
+        !<Key>KP_Home:          Home()\n\
+        !<Key>KP_Up:            Up()\n\
+        !<Key>KP_Down:          Down()\n\
+        !<Key>KP_End:           EraseEOF()\n\
+        !<Key>KP_Insert:        Insert()\n\
+        !<Key>KP_Delete:        Delete()\n\
+        <Key>KP_Enter:          Enter()\n\
+        <Key>Return:            Newline()\n\
+        Shift<Key>Escape:       Attn()\n\
+        <Key>Escape:            Reset()\n\
+        !<Key>End:              EraseEOF()\n\
+        !Alt<Key>End:           EraseInput()\n\
+        <Key>Print:             Clear()\n\
+        !Alt<Key>Print:         SysReq()\n\
+        !Alt<Key>F11:           SysReq()\n
+
+x3270.emulatorFont: 9x15
+
+x3270.macros: \
+     ent: String("\n") Execute("sleep 30") macro(ent)
+
