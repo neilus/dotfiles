@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=x3270
+Comment=IBM Mainframe Terminal Emulator
+Icon=/home/neilus/.local/share/icons/x3270.jpg
+Exec=x3270
+Terminal=false
+Categories=Mainframe;Terminal Emulator
+GenericName[en_US]=x3270
+Name[en_US]=x3270

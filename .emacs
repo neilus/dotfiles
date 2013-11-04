@@ -1,6 +1,6 @@
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
 (require 'ox-reveal)
-'(org-export-backends (quote (ascii beamer html icalendar latex man md org texinfo confluence deck freemind groff koma-letter rss s5 taskjuggler reveal)))
+(org-export-backends (quote (ascii beamer html icalendar latex man md org texinfo confluence deck freemind groff koma-letter rss s5 taskjuggler reveal)))
 ;;; activate ecb
 (require 'ecb)
 (require 'ecb-autoloads)
@@ -12,8 +12,8 @@
   ;; If you edit it by hand, you could mess it up, so be careful.
   ;; Your init file should contain only one such instance.
   ;; If there is more than one, they won't work right.
- '(global-visual-line-mode t)
- '(inhibit-startup-screen t)
+(global-visual-line-mode t)
+(inhibit-startup-screen t)
 ;;; yasnippet
 ;;; should be loaded before auto complete so that they can work together
 (require 'yasnippet)
@@ -29,11 +29,11 @@
 (ac-set-trigger-key "TAB")
 (ac-set-trigger-key "<tab>")
 
- '(spice-output-local "Gnucap")
- '(spice-simulator "Gnucap")
- '(spice-waveform-viewer "Gwave")
- '(tab-width 2)
- '(truncate-lines 80))
+(spice-output-local "Gnucap")
+(spice-simulator "Gnucap")
+(spice-waveform-viewer "Gwave")
+(tab-width 2)
+(truncate-lines 80))
 (custom-set-faces
   ;; custom-set-faces was added by Custom.
   ;; If you edit it by hand, you could mess it up, so be careful.

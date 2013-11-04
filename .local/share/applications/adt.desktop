@@ -1,0 +1,10 @@
+[Desktop Entry]
+Type=Application
+Name=ADT
+Comment=Android Development Toolkit based on Eclipse Integrated Development Environment
+Icon=/home/neilus/.local/share/icons/adt-icon.png
+Exec=/opt/android/adt-bundle-linux-x86_64/eclipse/eclipse
+Terminal=false
+Categories=Development;IDE;Java;Android;
+GenericName[en_US]=Android Development Toolkit
+Name[en_US]=Android Development Toolkit
