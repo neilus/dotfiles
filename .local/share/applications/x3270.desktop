@@ -9,13 +9,25 @@ Categories=Mainframe;Terminal Emulator
 GenericName[en_US]=x3270
 Name[en_US]=x3270
 
-Actions=NewWindow;Connect_VM1
+Actions=Connect_VM1;NewWindow;NewBright;NewReverse;NewGreen;NewCpe;
+
 [Desktop Action NewWindow]
-Name=New Window
-Exec=x3270
-#OnlyShownIn=Unity;
+Name=New Terminal
+Exec=x3270 -activeicon
+[Desktop Action NewBright]
+Name=New Bright Terminal
+Exec=x3270 -scheme bright
+[Desktop Action NewReverse]
+Name=New Reverse Terminal
+Exec=x3270 -scheme reverse
+[Desktop Action NewGreen]
+Name=New Green-Terminal
+Exec=x3270 -scheme greenScreen
+[Desktop Action NewCpe]
+Name=New CPE Terminal
+Exec=x3270 -scheme cpe
+
 
 [Desktop Action Connect_VM1]
-Name=Connect VM1
+Name=Connect to VM1
 Exec=x3270 -scheme reverse vm1.icss.hu
-#OnlyShownIn=Unity;
