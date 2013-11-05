@@ -8,3 +8,14 @@ Terminal=false
 Categories=Mainframe;Terminal Emulator
 GenericName[en_US]=x3270
 Name[en_US]=x3270
+
+Actions=NewWindow;Connect_VM1
+[Desktop Action NewWindow]
+Name=New Window
+Exec=x3270
+#OnlyShownIn=Unity;
+
+[Desktop Action Connect_VM1]
+Name=Connect VM1
+Exec=x3270 -scheme reverse vm1.icss.hu
+#OnlyShownIn=Unity;
