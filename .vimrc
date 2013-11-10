@@ -160,6 +160,7 @@ filetype plugin indent on     " required!
 
 "" YCM aka intellisense
 Bundle 'Valloric/YouCompleteMe'
+let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'
