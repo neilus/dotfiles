@@ -8,6 +8,14 @@ to install and set up as I have issue:
                                   # back them up, and erase them from your home
 [ you @ your_machine ~ ]$ git submodule update --init
 ```
+After that you should set up git, especially to overwrite my user.name and
+user.email settings :). To do so issue the following commands with your
+settings:
+
+```
+git config --global user.name "Your-First-Name Lastname"
+git config --global user.email "youraddress@yourdomain.com
+```
 
 According to this setup you need to have gvim installed for proper copy/paste
 and mouse cursor handling. If you just want to ignore this, then you might
