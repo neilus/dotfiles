@@ -2,18 +2,11 @@ to install and set up as I have issue:
 
 ```
 [ you @ your_machine ~ ]$ git init
-[ you @ your_machine ~ ]$ git remote add origin git@github.com:neilus/dotfiles.git
-[ you @ your_machine ~ ]$ git stash
-[ you @ your_machine ~ ]$ git pull --all -f
-[ you @ your_machine ~ ]$ git submodule init
-[ you @ your_machine ~ ]$ git submodule update
-[ you @ your_machine ~ ]$ git push -u origin master
-```
-
-If you don't have a github account set up at your_machine, then use the https
-url instead of the ssh, so the command will be like so:
-```
 [ you @ your_machine ~ ]$ git remote add origin https://github.com/neilus/dotfiles.git
+[ you @ your_machine ~ ]$ git pull --all -f # it will complain for .bashrc, and
+                                  # maybe other files which you already have
+                                  # back them up, and erase them from your home
+[ you @ your_machine ~ ]$ git submodule --init update
 ```
 
 According to this setup you need to have gvim installed for proper copy/paste
@@ -26,10 +19,13 @@ plugins:
 [ you @ your_machine ~ ]$  vim -c BundleInstall!
 ```
 when completed, exit vim and do the following to have semantic lexer for C-ish
-languages. Note that you also have to have clang, llvm, and cmake installed:
+languages. Note that you also have to have *clang, llvm, python 2.7 libraries,
+mono-xbuild  and cmake* installed:
+
 ```
 [ you @ your_machine ~ ]$ cd ~/.vim/bundle/YouCompleteMe/
 [ you @ your_machine YouCompleteMe ]$ ./install.sh --clang-completer
+--omnisharp-completer
 ```
 
 If I'm missing something please send me a bug report at this github repository:
