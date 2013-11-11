@@ -3,9 +3,17 @@ to install and set up as I have issue:
 ```
 [ you @ your_machine ~ ]$ git init
 [ you @ your_machine ~ ]$ git remote add origin https://github.com/neilus/dotfiles.git
+[ you @ your_machine ~ ]$ mv -f .bash_profile .bash_profile-bak
+[ you @ your_machine ~ ]$ mv -f .bashrc .bashrc-bak
+[ you @ your_machine ~ ]$ mv -f .vimrc .vimrc-bak
+[ you @ your_machine ~ ]$ mv -f .emacs .emacs-bak
+[ you @ your_machine ~ ]$ mv -f .git-completion.sh .git-completion.sh-bak
+[ you @ your_machine ~ ]$ mv -f .git-prompt .git-prompt-bak
+[ you @ your_machine ~ ]$ mv -f .gitconfig .gitconfig-bak
+[ you @ your_machine ~ ]$ mv -f .bash_profile .bash_profile-bak
 [ you @ your_machine ~ ]$ git pull --all -f # it will complain for .bashrc, and
-                                  # maybe other files which you already have
-                                  # back them up, and erase them from your home
+[ you @ your_machine ~ ]$ git checkout master  # maybe other files which you already
+                          # have back them up, and erase them from your home
 [ you @ your_machine ~ ]$ git submodule update --init
 ```
 After that you should set up git, especially to overwrite my user.name and
