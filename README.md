@@ -6,7 +6,7 @@ to install and set up as I have issue:
 [ you @ your_machine ~ ]$ git pull --all -f # it will complain for .bashrc, and
                                   # maybe other files which you already have
                                   # back them up, and erase them from your home
-[ you @ your_machine ~ ]$ git submodule --init update
+[ you @ your_machine ~ ]$ git submodule update --init
 ```
 
 According to this setup you need to have gvim installed for proper copy/paste
