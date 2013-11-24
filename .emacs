@@ -50,3 +50,14 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(hl-line ((t (:background "gray21" :underline nil)))))
+
+(defun update-diff-colors ()
+  "update the colors for diff faces"
+  (set-face-attribute 'diff-added nil
+                      :foreground "white" :background "blue")
+  (set-face-attribute 'diff-removed nil
+                      :foreground "white" :background "red3")
+  (set-face-attribute 'diff-changed nil
+                      :foreground "white" :background "purple"))
+(eval-after-load "diff-mode"
+  '(update-diff-colors))
