@@ -13,13 +13,18 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(custom-enabled-themes (quote (wombat)))
+ '(delete-selection-mode nil)
  '(global-hl-line-mode t)
+ '(global-whitespace-mode t)
  '(inhibit-startup-screen t)
+ '(mark-even-if-inactive t)
  '(org-export-backends (quote (ascii beamer html icalendar latex man md org texinfo confluence deck freemind groff koma-letter rss s5 taskjuggler reveal)))
+ '(scroll-bar-mode (quote right))
  '(spice-output-local "Gnucap")
  '(spice-simulator "Gnucap")
  '(spice-waveform-viewer "Gwave")
  '(tab-width 2)
+ '(transient-mark-mode 1)
  '(truncate-lines 80)
  '(word-wrap t))
 (org-babel-do-load-languages
