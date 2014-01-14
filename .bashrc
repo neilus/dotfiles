@@ -224,6 +224,6 @@ alias wacom_inverted='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate 
 export EXTENSIONS='.local/share/gnome-shell/extensions'
 export PATH=~/bin:~/bin/npm/bin::$PATH
 ## android sdk tools
-export PATH=/opt/google/adt-bundle-linux-x86_64-20131030/sdk/tools:/opt/google/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:/opt/google/adt-bundle-linux-x86_64-20131030/sdk/build-tools/:$PATH
+export PATH=/opt/google/adk/sdk/tools:/opt/google/adk/sdk/platform-tools:/opt/google/adk/sdk/build-tools/:$PATH
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
