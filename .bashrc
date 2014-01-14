@@ -222,6 +222,8 @@ alias emacsclient='emacsclient -n'
 alias wacom_normal='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none'
 alias wacom_inverted='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
-export PATH=~/bin:./*/bin:$PATH
+export PATH=~/bin:~/bin/npm/bin::$PATH
+## android sdk tools
+export PATH=/opt/google/adt-bundle-linux-x86_64-20131030/sdk/tools:/opt/google/adt-bundle-linux-x86_64-20131030/sdk/platform-tools:/opt/google/adt-bundle-linux-x86_64-20131030/sdk/build-tools/:$PATH
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
