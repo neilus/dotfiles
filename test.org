@@ -1,0 +1,151 @@
+#+begin_src ditaa :file /tmp/orgtest-ditaa.png :cmdline -r -s 0.8
+    +-----------+        +---------+  
+    |    PLC    |        |         |                
+    |  Network  +<------>+   PLC   +<---=---------+ 
+    |    cRED   |        |  c707   |              | 
+    +-----------+        +----+----+              | 
+                              ^                   | 
+                              |                   | 
+                              |  +----------------|-----------------+
+                              |  |                |                 |
+                              v  v                v                 v
+      +----------+       +----+--+--+      +-------+---+      +-----+-----+       Windows clients
+      |          |       |          |      |           |      |           |      +----+      +----+
+      | Database +<----->+  Shared  +<---->+ Executive +<-=-->+ Operator  +<---->|cYEL| . . .|cYEL|
+      |   c707   |       |  Memory  |      |   c707    |      | Server    |      |    |      |    |
+      +--+----+--+       |{d} cGRE  |      +------+----+      |   c707    |      +----+      +----+
+         ^    ^          +----------+             ^           +-------+---+
+         |    |                                   |                        
+         |    +--------=--------------------------+                    
+         v                                                             
++--------+--------+                                                         
+|                 |                                                         
+| Millwide System |            -------- Data ---------                      
+| cBLU            |            --=----- Signals ---=--                      
++-----------------+
+#+end_src
+
+#+begin_src dot :file /tmp/orgtest-dot.png :cmdline -Kdot -Tpng
+digraph G {
+  size="8,6"
+  ratio=expand
+  edge [dir=both]
+  plcnet [shape=box, label="PLC Network"]
+  subgraph cluster_wrapline {
+    label="Wrapline Control System"
+    color=purple
+    subgraph {
+    rank=same
+    exec
+    sharedmem [style=filled, fillcolor=lightgrey, shape=box]
+    }
+    edge[style=dotted, dir=none]
+    exec -> opserver
+    exec -> db
+    plc -> exec
+    edge [style=line, dir=both]
+    exec -> sharedmem
+    sharedmem -> db
+    plc -> sharedmem
+    sharedmem -> opserver
+  }
+  plcnet -> plc [constraint=false]
+  millwide [shape=box, label="Millwide System"]
+  db -> millwide
+
+  subgraph cluster_opclients {
+    color=blue
+    label="Operator Clients"
+    rankdir=LR
+    labelloc=b
+    node[label=client]
+    opserver -> client1
+    opserver -> client2
+    opserver -> client3
+  }
+}
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-dot.png]]
+
+#+begin_src plantuml :file /tmp/orgtest-plantuml-sequence_diagram.png
+title Example Sequence Diagram
+activate Client
+Client -> Server: Session Initiation
+note right: Client requests new session
+activate Server
+Client <-- Server: Authorization Request
+note left: Server requires authentication
+Client -> Server: Authorization Response
+note right: Client provides authentication details
+Server --> Client: Session Token
+note left: Session established
+deactivate Server
+Client -> Client: Saves token
+deactivate Client
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-plantuml-sequence_diagram.png]]
+
+#+begin_src plantuml :file /tmp/orgtest-plantuml-activity_diagram.png
+title Example Activity Diagram
+note right: Example Function
+(*)--> "Step 1"
+--> "Step 2"
+-> "Step 3"
+--> "Step 4"
+--> === STARTLOOP ===
+note top: For each element in the array
+if "Are we done?" then
+  -> [no] "Do this"
+  -> "Do that"
+  note bottom: Important note\ngoes here
+  -up-> "Increment counters"
+  --> === STARTLOOP ===
+else
+  --> [yes] === ENDLOOP ===
+endif
+--> "Last Step"
+--> (*)
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-plantuml-activity_diagram.png]]
+
+
+#+begin_src plantuml :file /tmp/orgtest-plantuml-usecase_diagram.png
+LabUser --> (Runs Simulation)
+LabUser --> (Analyses Results)
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-plantuml-usecase_diagram.png]]
+
+#+begin_src plantuml :file /tmp/orgtest-object_diagram.png
+Object1 <|-- Object2
+Object1: someVar
+Object1: execute()
+Object2: getState()
+Object2: setState()
+Object2: state
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-object_diagram.png]]
+
+#+begin_src plantuml :file /tmp/orgtest-state_diagram.png
+[*] --> Start
+Start -> State2
+State2 -> State3
+note right of State3: Notes can be\nattached to states
+State2 --> State4
+State4 -> Finish
+State3 --> Finish
+Finish --> [*]
+#+end_src
+
+#+RESULTS:
+[[file:/tmp/orgtest-state_diagram.png]]
+
