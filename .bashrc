@@ -225,5 +225,6 @@ export EXTENSIONS='.local/share/gnome-shell/extensions'
 export PATH=~/bin:~/bin/npm/bin::$PATH
 ## android sdk tools
 export PATH=/opt/google/adk/tools:/opt/google/adk/platform-tools:/opt/google/adk/build-tools/:$PATH
+export PATH=~/.local/cloud9/bin:$PATH
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 

@@ -7,3 +7,6 @@
 [submodule ".emacs.d/org-reveal"]
 	path = .emacs.d/org-reveal
 	url = https://github.com/yjwen/org-reveal.git
+[submodule "cloud9"]
+	path = .local/cloud9
+	url = https://github.com/ajaxorg/cloud9.git

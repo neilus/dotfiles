@@ -44,6 +44,21 @@ mono-xbuild  and cmake* installed:
 --omnisharp-completer
 ```
 
+## Cloud9
+setting up cloud 9 you should have node.js, npm and libxml2-dev installed.
+If you have packagekit-tools installed it should look something like this:
+
+```
+[ you @ your_machine ~ ]$ cd .local/cloud9
+[ you @ your_machine cloud9 ]$ npm install
+[ you @ your_machine ~ ]$ cd
+[ you @ your_machine ~ ]$ cloud9.sh -w <workspace directory>
+```
+Where the workspace directory is the directory where you have your files you
+want to edit.
+
+For more information about the Cloud9 IDE goto https://github.com/ajaxorg/cloud9
+
 If I'm missing something please send me a bug report at this github repository:
 https://github.com/neilus/dotfiles/issues
 
