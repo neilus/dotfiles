@@ -46,7 +46,6 @@ mono-xbuild  and cmake* installed:
 
 ## Cloud9
 setting up cloud 9 you should have node.js, npm and libxml2-dev installed.
-If you have packagekit-tools installed it should look something like this:
 
 ```
 [ you @ your_machine ~ ]$ cd .local/cloud9
