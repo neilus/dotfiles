@@ -25,6 +25,7 @@
  '(tab-width 2)
  '(transient-mark-mode 1)
  '(truncate-lines 80)
+ '(whitespace-display-mappings (quote ((space-mark 32 [183] [46]) (space-mark 160 [164] [95]) (tab-mark 9 [187 9] [92 9]) (newline-mark 10 [182 10]))))
  '(word-wrap t))
 (org-babel-do-load-languages
  'org-babel-load-languages
@@ -53,7 +54,13 @@
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(hl-line ((t (:background "gray21" :underline nil)))))
+ '(hl-line ((t (:background "gray21" :underline nil))))
+ '(whitespace-empty ((t (:foreground "firebrick"))))
+ '(whitespace-hspace ((t (:background "grey24" :foreground "white smoke"))))
+ '(whitespace-indentation ((t (:foreground "firebrick"))))
+ '(whitespace-space-after-tab ((t (:foreground "firebrick"))))
+ '(whitespace-space-before-tab ((t (:foreground "dark orange"))))
+ '(whitespace-trailing ((t (:foreground "yellow" :weight bold)))))
 
 (defun update-diff-colors ()
   "update the colors for diff faces"

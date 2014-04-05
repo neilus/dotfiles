@@ -10,3 +10,6 @@
 [submodule "cloud9"]
 	path = .local/cloud9
 	url = https://github.com/ajaxorg/cloud9.git
+[submodule ".local/dillinger"]
+	path = .local/dillinger
+	url = https://github.com/joemccann/dillinger.git
