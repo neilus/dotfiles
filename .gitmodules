@@ -13,3 +13,6 @@
 [submodule ".local/dillinger"]
 	path = .local/dillinger
 	url = https://github.com/joemccann/dillinger.git
+[submodule ".bash_completion/waslp"]
+	path = .bash_completion/waslp
+	url = https://github.com/WASdev/util.bash.completion.git

@@ -107,7 +107,7 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-alias ls='ls -hF --color=tty'                 # classify files in colour
+#alias ls='ls -hF '                 # classify files in colour
 alias dir='ls --color=auto --format=vertical'
 alias vdir='ls --color=auto --format=long'
 alias ll='ls -l'                              # long list
@@ -199,32 +199,32 @@ fi
 if [ -f "/etc/bashrc" ]; then
   source "/etc/bashrc"
 fi
-if [ -f "${HOME}/.git-bash_completion" ]; then
-  source ~/.git-completion.sh
+if [ -f "$HOME/.bash_completion/git-completion.sh" ]; then
+  source ~/.bash_completion/git-completion.sh
 fi
-if [ -f "${HOME}/.git-prompt.sh" ]; then
-  source ~/.git-prompt.sh
+if [ -f "$HOME/.bash_completion/git-prompt.sh" ]; then
+  source ~/.bash_completion/git-prompt.sh
+fi
+if [ -f "$HOME/.bash_completion/waslp/server" ]; then
+  source ~/.bash_completion/waslp/server
 fi
 
-alias ls='ls --color -hF'
 PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;30m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
 
 alias kefir='nohup Xephyr -screen 960x1020 :1 &'
 alias gshell='gnome-shell --sm-disable --replace -d :1'
 alias devshell='kefir gshell'
-alias vim='gvim -v '
+alias vim='vim -v '
 function whichemacs(){
   /usr/bin/emacsclient -n $@ >>/dev/null 2>/dev/null || /usr/bin/emacs $@;
 }
 alias emacs=whichemacs
 alias emacsclient='emacsclient -n'
-# rotating the tablet on my tabletPC
-alias wacom_normal='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate none && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate none'
-alias wacom_inverted='xsetwacom set "Serial Wacom Tablet WACf004 stylus" Rotate half && xsetwacom set "Serial Wacom Tablet WACf004 eraser" Rotate half'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
-export PATH=~/bin:~/bin/npm/bin::$PATH
+export PATH=~/bin:~/bin/npm/bin:$PATH
 ## android sdk tools
 export PATH=/opt/google/adk/tools:/opt/google/adk/platform-tools:/opt/google/adk/build-tools/:$PATH
+export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/cloud9/bin:$PATH
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
