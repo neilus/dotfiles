@@ -156,19 +156,23 @@ Bundle 'git://git.wincent.com/command-t.git'
 " ...
 
 filetype plugin indent on     " required!
-" or 
+" or
 " filetype plugin on          " to not use the indentation settings set by plugins
 
 
 "" CoVim
 "" for dependency 1st install twisted and argparse for python
 "" pip install twisted argparse
-Bundle 'FredKSchott/CoVim'
-let covim_default_name = "neilus"
-let covim_default_port = "1984"
+"""Bundle 'FredKSchott/CoVim'
+"""let covim_default_name = "neilus"
+"""let covim_default_port = "1984"
 "" YCM aka intellisense
 Bundle 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
+let g:ycm_min_num_of_chars_for_completion = 1
+let g:ycm_auto_trigger = 1
+let g:ycm_complete_in_comments = 1
+let g:ycm_complete_in_strings = 1
 Bundle 'ervandew/eclim'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'

@@ -209,7 +209,7 @@ if [ -f "$HOME/.bash_completion/waslp/server" ]; then
   source ~/.bash_completion/waslp/server
 fi
 
-PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;30m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
+PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;39m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
 
 alias kefir='nohup Xephyr -screen 960x1020 :1 &'
 alias gshell='gnome-shell --sm-disable --replace -d :1'
@@ -221,10 +221,12 @@ function whichemacs(){
 alias emacs=whichemacs
 alias emacsclient='emacsclient -n'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
+export LD_LIBRARY_PATH="/usr/lib":"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/c++"
 export PATH=~/bin:~/bin/npm/bin:$PATH
 ## android sdk tools
 export PATH=/opt/google/adk/tools:/opt/google/adk/platform-tools:/opt/google/adk/build-tools/:$PATH
 export PATH=/usr/local/bin:$PATH
 export PATH=~/.local/cloud9/bin:$PATH
+export PATH="$PATH":"/usr/texbin" # LaTeX on Mac
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 
