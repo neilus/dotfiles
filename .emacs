@@ -6,6 +6,39 @@
 (global-linum-mode)
 (global-visual-line-mode )
 
+(require 'org-latex)
+(unless (boundp 'org-export-latex-classes)
+  (setq org-export-latex-classes nil))
+(add-to-list 'org-export-latex-classes
+             '("article"
+               "\\documentclass{article}"
+               ("\\section{%s}" . "\\section*{%s}")))
+;; -- Display images in org mode
+;; enable image mode first
+(iimage-mode)
+;; add the org file link format to the iimage mode regex
+(add-to-list 'iimage-mode-image-regex-alist
+(cons (concat "\\[\\[file:\\(~?" iimage-mode-image-filename-regex "\\)\\]") 1))
+;; add a hook so we can display images on load
+(add-hook 'org-mode-hook '(lambda () (org-turn-on-iimage-in-org)))
+;; function to setup images for display on load
+(defun org-turn-on-iimage-in-org ()
+"display images in your org file"
+(interactive)
+(turn-on-iimage-mode)
+(set-face-underline-p 'org-link nil))
+;; function to toggle images in a org bugger
+(defun org-toggle-iimage-in-org ()
+"display images in your org file"
+
+(define-key org-mode-map (kbd "C-M--i") 'turn-off-iimage-mode)
+
+
+(interactive)
+(if (face-underline-p 'org-link)
+(set-face-underline-p 'org-link nil)
+(set-face-underline-p 'org-link t))
+(call-interactively 'iimage-mode))
 (custom-set-variables
  ;; custom-set-variables was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
