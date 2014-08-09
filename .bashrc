@@ -225,8 +225,9 @@ export LD_LIBRARY_PATH="/usr/lib":"/Applications/Xcode.app/Contents/Developer/To
 export PATH=~/bin:~/bin/npm/bin:$PATH
 ## android sdk tools
 export PATH=/opt/google/adk/tools:/opt/google/adk/platform-tools:/opt/google/adk/build-tools/:$PATH
-export PATH=/usr/local/bin:$PATH
+export PATH=/usr/bin/:/usr/local/bin:$PATH
 export PATH=~/.local/cloud9/bin:$PATH
 export PATH="$PATH":"/usr/texbin" # LaTeX on Mac
+export PATH="$PATH":"/usr/local/Cellar/graphviz/2.38.0/bin/" # graphviz from homebrew on Mac
 #export JAVA_HOME=/usr/java/jdk1.7.0_25
 

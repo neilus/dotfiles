@@ -67,7 +67,7 @@ digraph G {
 #+end_src
 
 #+RESULTS:
-[[file:/tmp/orgtest-dot.png]]
+[file:/tmp/orgtest-dot.png]]
 
 #+begin_src plantuml :file /tmp/orgtest-plantuml-sequence_diagram.png
 title Example Sequence Diagram
