@@ -31,7 +31,7 @@
 (defun org-toggle-iimage-in-org ()
 "display images in your org file"
 
-(define-key org-mode-map (kbd "C-M--i") 'turn-off-iimage-mode)
+(define-key org-mode-map (kbd "C-M-i") 'turn-off-iimage-mode)
 
 
 (interactive)

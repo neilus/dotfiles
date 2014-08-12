@@ -25,6 +25,9 @@
 +-----------------+
 #+end_src
 
+#+RESULTS:
+[[file:/tmp/orgtest-ditaa.png]]
+
 #+begin_src dot :file /tmp/orgtest-dot.png :cmdline -Kdot -Tpng
 digraph G {
   size="8,6"
@@ -67,7 +70,7 @@ digraph G {
 #+end_src
 
 #+RESULTS:
-[file:/tmp/orgtest-dot.png]]
+[[file:/tmp/orgtest-dot.png]]
 
 #+begin_src plantuml :file /tmp/orgtest-plantuml-sequence_diagram.png
 title Example Sequence Diagram
@@ -94,7 +97,7 @@ title Example Activity Diagram
 note right: Example Function
 (*)--> "Step 1"
 --> "Step 2"
--> "Step 3"
+--> "Step 3"
 --> "Step 4"
 --> === STARTLOOP ===
 note top: For each element in the array
@@ -102,7 +105,7 @@ if "Are we done?" then
   -> [no] "Do this"
   -> "Do that"
   note bottom: Important note\ngoes here
-  -up-> "Increment counters"
+  --up-> "Increment counters"
   --> === STARTLOOP ===
 else
   --> [yes] === ENDLOOP ===
