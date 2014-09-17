@@ -1,6 +1,7 @@
 (add-to-list 'load-path "~/.emacs.d/org-mode/lisp")
 (add-to-list 'load-path "~/.emacs.d/org-reveal")
-(setq org-plantuml-jar-path "~/.vim/bundle/eclim/doc/extension/plantuml.jar")
+;(setq org-plantuml-jar-path "~/.vim/bundle/eclim/doc/extension/plantuml.jar")
+(setq org-plantuml-jar-path "/usr/local/Cellar/plantuml/8002/plantuml.8002.jar")
 (require 'ox-reveal)
 (load-theme 'wombat)
 (global-linum-mode)
