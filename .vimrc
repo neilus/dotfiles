@@ -1,4 +1,3 @@
-
 " Automatic reloading of .vimrc
 autocmd! bufwritepost .vimrc source %
 " higlight the line where the cursor is
@@ -80,8 +79,8 @@ color wombat256mod
 
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
-filetype off
-filetype plugin indent on
+filetype on
+"filetype plugin indent on
 syntax on
 
 " Showing line numbers and length
@@ -117,8 +116,10 @@ set noswapfile
 
 
 """ vundle ... IDE-like intellisense
-"set nocompatible               " be iMproved
-filetype off                   " required!
+set nocompatible               " be iMproved required for eclim
+"filetype on                   " required!
+filetype plugin indent on
+let g:EclimCompletionMethod = 'omnifunc'
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -141,7 +142,7 @@ Bundle 'vim-scripts/speeddating.vim'
 
 " vim-scripts repos
 Bundle 'L9'
-Bundle 'FuzzyFinder'
+"Bundle 'FuzzyFinder'
 Bundle 'rails.vim'
 Bundle 'neilus/vim-creole'
 Bundle 'vim-scripts/VimClojure'
@@ -173,7 +174,8 @@ let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
-Bundle 'ervandew/eclim'
+"Bundle 'ervandew/eclim'
+Bundle 'pwicks86/eclim-for-vundle'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'
 

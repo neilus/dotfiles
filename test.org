@@ -70,27 +70,7 @@ digraph G {
 #+end_src
 
 #+RESULTS:
-[[file:/tmp/orgtest-dot.png]]
-
-#+begin_src plantuml :file /tmp/orgtest-plantuml-sequence_diagram.png
-title Example Sequence Diagram
-activate Client
-Client -> Server: Session Initiation
-note right: Client requests new session
-activate Server
-Client <-- Server: Authorization Request
-note left: Server requires authentication
-Client -> Server: Authorization Response
-note right: Client provides authentication details
-Server --> Client: Session Token
-note left: Session established
-deactivate Server
-Client -> Client: Saves token
-deactivate Client
-#+end_src
-
-#+RESULTS:
-[[file:/tmp/orgtest-plantuml-sequence_diagram.png]]
+[[file:/tmp/orgtest-plantuml-activity_diagram.png]]
 
 #+begin_src plantuml :file /tmp/orgtest-plantuml-activity_diagram.png
 title Example Activity Diagram
