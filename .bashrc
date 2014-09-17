@@ -229,5 +229,10 @@ export PATH=/usr/local/bin:/usr/bin:$PATH
 export PATH=~/.local/cloud9/bin:$PATH
 export PATH="/usr/local/texlive/2014/bin/x86_64-darwin":"$PATH" # LaTeX on Mac
 export PATH="$PATH":"/usr/local/Cellar/graphviz/2.38.0/bin" # graphviz from homebrew on Mac
-#export JAVA_HOME=/usr/java/jdk1.7.0_25
+export PATH="$PATH":~/Development/adt-bundle-mac-x86_64-20140702/sdk/tools:~/Development/adt-bundle-mac-x86_64-20140702/sdk/build-tools:~/Development/adt-bundle-mac-x86_64-20140702/sdk/platform-tools
 
+#export JAVA_HOME=/usr/java/jdk1.7.0_25
+#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
+
+export WORKON_HOME=~/Envs
+source /usr/local/bin/virtualenvwrapper.sh
