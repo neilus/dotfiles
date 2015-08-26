@@ -199,14 +199,14 @@ fi
 if [ -f "/etc/bashrc" ]; then
   source "/etc/bashrc"
 fi
-if [ -f "$HOME/.bash_completion/git-completion.sh" ]; then
-  source ~/.bash_completion/git-completion.sh
+if [ -f "$HOME/.bash_completion.d/git-completion.sh" ]; then
+  source ~/.bash_completion.d/git-completion.sh
 fi
-if [ -f "$HOME/.bash_completion/git-prompt.sh" ]; then
-  source ~/.bash_completion/git-prompt.sh
+if [ -f "$HOME/.bash_completion.d/git-prompt.sh" ]; then
+  source ~/.bash_completion.d/git-prompt.sh
 fi
-if [ -f "$HOME/.bash_completion/waslp/server" ]; then
-  source ~/.bash_completion/waslp/server
+if [ -f "$HOME/.bash_completion.d/waslp/server" ]; then
+  source ~/.bash_completion.d/waslp/server
 fi
 
 PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;39m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
@@ -235,4 +235,5 @@ export PATH="$PATH":~/Development/adt-bundle-mac-x86_64-20140702/sdk/tools:~/Dev
 #export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
 
 export WORKON_HOME=~/Envs
-source /usr/local/bin/virtualenvwrapper.sh
+#source /usr/local/bin/virtualenvwrapper.sh
+export HOMEBREW_GITHUB_API_TOKEN=b61e1c14b4fb2d843ba3f55ec5d8dd0a2b144695

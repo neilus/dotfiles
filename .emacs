@@ -5,7 +5,7 @@
 (require 'ox-reveal)
 (load-theme 'wombat)
 (global-linum-mode)
-(global-visual-line-mode )
+(global-visual-line-mode)
 
 (require 'org-latex)
 (unless (boundp 'org-export-latex-classes)

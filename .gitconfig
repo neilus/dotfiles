@@ -1,6 +1,6 @@
 [user]
 	name = Norbert Sana
-	email = neilus@icss.hu
+	email = neilus@iteach.world
 [color]
 	ui = true
 [alias]
@@ -8,3 +8,9 @@
 	gog = log --graph --decorate --color --all
 [push]
 	default = upstream
+[core]
+	excludesfile = /Users/neilus/.gitignore_global
+[filter "lfs"]
+	clean = git-lfs clean %f
+	smudge = git-lfs smudge %f
+	required = true

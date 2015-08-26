@@ -119,7 +119,7 @@ set noswapfile
 set nocompatible               " be iMproved required for eclim
 "filetype on                   " required!
 filetype plugin indent on
-let g:EclimCompletionMethod = 'omnifunc'
+"let g:EclimCompletionMethod = 'omnifunc'
 
 set rtp+=~/.vim/vundle.git/
 call vundle#rc()
@@ -175,7 +175,7 @@ let g:ycm_auto_trigger = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
 "Bundle 'ervandew/eclim'
-Bundle 'pwicks86/eclim-for-vundle'
+"Bundle 'pwicks86/eclim-for-vundle'
 Bundle 'othree/javascript-libraries-syntax.vim'
 Bundle 'elzr/vim-json'
 
