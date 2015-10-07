@@ -1,6 +1,6 @@
 [user]
 	name = Norbert Sana
-	email = neilus@iteach.world
+	email = neilus@elte.hu
 [color]
 	ui = true
 [alias]
@@ -10,7 +10,10 @@
 	default = upstream
 [core]
 	excludesfile = /Users/neilus/.gitignore_global
+	editor = vim
 [filter "lfs"]
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
-	required = true
+  required = true
+[diff]
+	tool = vimdiff

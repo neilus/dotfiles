@@ -11,3 +11,4 @@ PATH=$PATH:$HOME/.local/bin:$HOME/bin
 
 export PATH
 export PATH=/usr/local/sbin:$PATH
+. /Users/neilus/.profabevjava

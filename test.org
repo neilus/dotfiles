@@ -26,7 +26,7 @@
 #+end_src
 
 #+RESULTS:
-[[file:/tmp/orgtest-ditaa.png]]
+[file:/tmp/orgtest-ditaa.png]
 
 #+begin_src dot :file /tmp/orgtest-dot.png :cmdline -Kdot -Tpng
 digraph G {
