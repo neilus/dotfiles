@@ -26,9 +26,10 @@
 #+end_src
 
 #+RESULTS:
-[file:/tmp/orgtest-ditaa.png]
+[[file:/tmp/orgtest-ditaa.png]]
 
-#+begin_src dot :file /tmp/orgtest-dot.png :cmdline -Kdot -Tpng
+
+#+begin_src dot :file /tmp/orgtest-dot.png :cmdline -Kdot  -Tpng
 digraph G {
   size="8,6"
   ratio=expand
@@ -70,7 +71,7 @@ digraph G {
 #+end_src
 
 #+RESULTS:
-[[file:/tmp/orgtest-plantuml-activity_diagram.png]]
+[[file:/tmp/orgtest-dot.png]]
 
 #+begin_src plantuml :file /tmp/orgtest-plantuml-activity_diagram.png
 title Example Activity Diagram
@@ -107,12 +108,22 @@ LabUser --> (Analyses Results)
 [[file:/tmp/orgtest-plantuml-usecase_diagram.png]]
 
 #+begin_src plantuml :file /tmp/orgtest-object_diagram.png
-Object1 <|-- Object2
-Object1: someVar
-Object1: execute()
-Object2: getState()
-Object2: setState()
-Object2: state
+object Object01 {
+ name = "Dummy"
+ id = 123
+}
+object Object02
+object Object03
+object Object04
+object Object05
+object Object06
+object Object07
+object Object08
+
+Object01 <|-- Object02
+Object03 *-- Object04
+Object05 o-- "4" Object06
+Object07 .. Object08 : some labels
 #+end_src
 
 #+RESULTS:

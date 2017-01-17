@@ -107,12 +107,12 @@ alias egrep='egrep --color=auto'              # show differences in colour
 alias fgrep='fgrep --color=auto'              # show differences in colour
 #
 # Some shortcuts for different directory listings
-#alias ls='ls -hF '                 # classify files in colour
-alias dir='ls --color=auto --format=vertical'
-alias vdir='ls --color=auto --format=long'
-alias ll='ls -l'                              # long list
-alias la='ls -A'                              # all but . and ..
-alias l='ls -CF'                              #
+alias ls='ls -hFG '                 # classify files in colour
+alias dir='ls -G --color=auto --format=vertical'
+alias vdir='ls -G -color=auto --format=long'
+alias ll='ls -lG'                              # long list
+alias la='ls -AG'                              # all but . and ..
+alias l='ls -CFG'                              #
 
 # Umask
 #
@@ -236,4 +236,9 @@ export PATH="$PATH":~/Development/adt-bundle-mac-x86_64-20140702/sdk/tools:~/Dev
 
 export WORKON_HOME=~/Envs
 #source /usr/local/bin/virtualenvwrapper.sh
-export HOMEBREW_GITHUB_API_TOKEN=b61e1c14b4fb2d843ba3f55ec5d8dd0a2b144695
+export HOMEBREW_GITHUB_API_TOKEN=1d7041107d815130fafb18036ea50dde48c196ec
+
+
+if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
+      source `brew --prefix`/etc/bash_completion.d/vagrant
+fi

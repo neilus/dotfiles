@@ -211,3 +211,9 @@ set nofoldenable
 """execute pathogen#infect()
 """ Compiler output
 Bundle 'scrooloose/syntastic'
+"Bundle 'mfukar/robotframework-vim'
+
+""" Ruby and Vagrantfile
+autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
+autocmd BufNewFile,BufRead Berksfile set filetype=ruby
