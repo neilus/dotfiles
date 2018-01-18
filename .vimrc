@@ -217,3 +217,4 @@ Bundle 'scrooloose/syntastic'
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
+autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy

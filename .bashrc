@@ -236,9 +236,15 @@ export PATH="$PATH":~/Development/adt-bundle-mac-x86_64-20140702/sdk/tools:~/Dev
 
 export WORKON_HOME=~/Envs
 #source /usr/local/bin/virtualenvwrapper.sh
-export HOMEBREW_GITHUB_API_TOKEN=1d7041107d815130fafb18036ea50dde48c196ec
+export HOMEBREW_GITHUB_API_TOKEN=70c14194aff541b96a2ffba573cd1cbd7572bc97
 
 
 if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
       source `brew --prefix`/etc/bash_completion.d/vagrant
 fi
+
+if [ -d ~/bash_completion.d ]; then
+  . ~/bash_completion.d/*
+fi
+export GROOVY_HOME=/usr/local/opt/groovy/libexec
+export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
