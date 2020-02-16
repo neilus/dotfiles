@@ -11,6 +11,7 @@ set clipboard=unnamed
 " Markdown support
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.markdownd set filetype=markdown
+au BufRead,BufNewFile *.conf set filetype=conf
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
 set bs=2     " make backspace behave like normal again
@@ -58,25 +59,6 @@ au InsertLeave * match ExtraWhitespace /\s\+$/
 set t_Co=256
 color wombat256mod
 
-" whitespaces?
-"highlight Search cterm=underline gui=underline ctermbg=233 guibg=none ctermfg=none guifg=none
-"set hls
-"let g:HLSpace = 1
-""let g:HLColorScheme = g:colors_name
-"
-"function ToggleSpacesWithUnderscors()
-"    if g:HLSpace
-"        highlight Search cterm=underline gui=underline ctermbg=233  guibg=none ctermfg=none guifg=none
-"        let @/ = " "
-"      else
-"        highlight clear
-"        silent colorscheme "".g:HLColorScheme
-"        let @/ = ""
-"    endif
-"    let g:HLSpace = !g:HLSpace
-"endfunction
-"nmap <silent>  <F3> <Esc>:call ToggleSpacesWithUnderscors()<CR>
-
 " Enable syntax highlighting
 " You need to reload this file for the change to apply
 filetype on
@@ -121,39 +103,43 @@ set nocompatible               " be iMproved required for eclim
 filetype plugin indent on
 "let g:EclimCompletionMethod = 'omnifunc'
 
-set rtp+=~/.vim/vundle.git/
+" set rtp+=~/.vim/vundle.git/
+set rtp+=~/.vim/bundle/Vundle.vim/
 call vundle#rc()
+call vundle#begin()
+" call vundle#begin('~/.vim/bundle')
 
 " let Vundle manage Vundle
-Bundle 'gmarik/vundle'
+" Plugin 'gmarik/vundle'
+Plugin 'VundleVim/Vundle.vim'
 
 "
 " original repos on github
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'rstacruz/sparkup', {'rtp': 'vim/'}
-Bundle 'vim-scripts/vcscommand.vim'
+Plugin 'tpope/vim-fugitive'
+"Plugin 'Lokaltog/vim-easymotion'
+"Plugin 'rstacruz/sparkup', {'rtp': 'vim/'}
+"Plugin 'vim-scripts/vcscommand.vim'
 
 
 " org-mode...
-"Bundle 'hsitz/VimOrganizer'
-Bundle 'jceb/vim-orgmode'
-Bundle 'vim-scripts/speeddating.vim'
+"Plugin 'hsitz/VimOrganizer'
+Plugin 'jceb/vim-orgmode'
+"Plugin 'vim-scripts/speeddating.vim'
 
 " vim-scripts repos
-Bundle 'L9'
-"Bundle 'FuzzyFinder'
-Bundle 'rails.vim'
-Bundle 'neilus/vim-creole'
-Bundle 'vim-scripts/VimClojure'
-Bundle 'vim-scripts/taglist.vim'
-"""Bundle 'vim-scripts/vimwiki'
-"""Bundle 'vim-scripts/vim-wakatime'
-"""Bundle 'wakatime/vim-wakatime'
+"Plugin 'L9'
+"Plugin 'FuzzyFinder'
+Plugin 'rails.vim'
+Plugin 'neilus/vim-creole'
+Plugin 'vim-scripts/VimClojure'
+Plugin 'vim-scripts/taglist.vim'
+"""Plugin 'vim-scripts/vimwiki'
+"""Plugin 'vim-scripts/vim-wakatime'
+"""Plugin 'wakatime/vim-wakatime'
 " non github repos
-Bundle 'git://git.wincent.com/command-t.git'
+"Plugin 'git://git.wincent.com/command-t.git'
 " git repos on your local machine (ie. when working on your own plugin)
-"""Bundle 'file:///Users/gmarik/path/to/plugin'
+"""Plugin 'file:///Users/gmarik/path/to/plugin'
 " ...
 
 filetype plugin indent on     " required!
@@ -161,27 +147,21 @@ filetype plugin indent on     " required!
 " filetype plugin on          " to not use the indentation settings set by plugins
 
 
-"" CoVim
-"" for dependency 1st install twisted and argparse for python
-"" pip install twisted argparse
-"""Bundle 'FredKSchott/CoVim'
-"""let covim_default_name = "neilus"
-"""let covim_default_port = "1984"
 "" YCM aka intellisense
-Bundle 'Valloric/YouCompleteMe'
+Plugin 'Valloric/YouCompleteMe'
 let g:ycm_global_ycm_extra_conf='~/.vim/.ycm_extra_conf.py'
 let g:ycm_min_num_of_chars_for_completion = 1
 let g:ycm_auto_trigger = 1
 let g:ycm_complete_in_comments = 1
 let g:ycm_complete_in_strings = 1
-"Bundle 'ervandew/eclim'
-"Bundle 'pwicks86/eclim-for-vundle'
-Bundle 'othree/javascript-libraries-syntax.vim'
-Bundle 'elzr/vim-json'
+"Plugin 'ervandew/eclim'
+"Plugin 'pwicks86/eclim-for-vundle'
+Plugin 'othree/javascript-libraries-syntax.vim'
+Plugin 'elzr/vim-json'
 
 au! BufRead,BufNewFile *.json set filetype=json
 
-Bundle 'scrooloose/syntastic'
+Plugin 'scrooloose/syntastic'
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
@@ -189,16 +169,17 @@ Bundle 'scrooloose/syntastic'
 " """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%{FugitiveStatusline()}
 set statusline+=%*
 let g:syntastic_auto_loc_list=1
 let g:syntastic_loc_list_height=5
 
 "" as python IDE
-Bundle 'Lokaltog/vim-powerline'
+Plugin 'Lokaltog/vim-powerline'
 set laststatus=2
 " Settings for ctrlp
 " cd ~/.vim/bundle
-Bundle 'kien/ctrlp.vim'
+Plugin 'kien/ctrlp.vim'
 let g:ctrlp_max_height = 30
 set wildignore+=*.pyc
 set wildignore+=*_build/*
@@ -210,11 +191,12 @@ set wildignore+=*/coverage/*
 set nofoldenable
 """execute pathogen#infect()
 """ Compiler output
-Bundle 'scrooloose/syntastic'
-"Bundle 'mfukar/robotframework-vim'
+Plugin 'mfukar/robotframework-vim'
+call vundle#end() 
 
 """ Ruby and Vagrantfile
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
 autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
+set encoding=utf-8
