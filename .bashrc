@@ -205,15 +205,21 @@ fi
 if [ -f "$HOME/.bash_completion.d/git-prompt.sh" ]; then
   source ~/.bash_completion.d/git-prompt.sh
 fi
-if [ -f "$HOME/.bash_completion.d/waslp/server" ]; then
-  source ~/.bash_completion.d/waslp/server
+if [ -f "$HOME/.bash_completion.d/kubectl" ]; then
+  source ~/.bash_completion.d/kubectl
 fi
+if [ -f "$HOME/.bash_completion.d/minikube" ]; then
+  source ~/.bash_completion.d/minikube
+fi
+if [ -f "$HOME/.bash_completion.d/helm" ]; then
+  source ~/.bash_completion.d/helm
+fi
+# if [ -d ~/bash_completion.d ]; then
+#   . ~/bash_completion.d/*
+# fi
 
 PS1='[\[\033[01;32m\] \u\[\033[00m\]@\[\033[01;33m\]\h \[\033[01;34m\]\W\[\033[01;39m\]$(__git_ps1 " (%s)")\[\033[00m\] ]\$ '
 
-alias kefir='nohup Xephyr -screen 960x1020 :1 &'
-alias gshell='gnome-shell --sm-disable --replace -d :1'
-alias devshell='kefir gshell'
 alias vim='vim -v '
 function whichemacs(){
   /usr/bin/emacsclient -n $@ >>/dev/null 2>/dev/null || /usr/bin/emacs $@;
@@ -221,30 +227,20 @@ function whichemacs(){
 alias emacs=whichemacs
 alias emacsclient='emacsclient -n'
 export EXTENSIONS='.local/share/gnome-shell/extensions'
-export LD_LIBRARY_PATH="/usr/lib":"/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/c++"
 export PATH=~/bin:~/bin/npm/bin:$PATH
-## android sdk tools
-export PATH=/opt/google/adk/tools:/opt/google/adk/platform-tools:/opt/google/adk/build-tools:$PATH
 export PATH=/usr/local/bin:/usr/bin:$PATH
-export PATH=~/.local/cloud9/bin:$PATH
-export PATH="/usr/local/texlive/2014/bin/x86_64-darwin":"$PATH" # LaTeX on Mac
-export PATH="$PATH":"/usr/local/Cellar/graphviz/2.38.0/bin" # graphviz from homebrew on Mac
-export PATH="$PATH":~/Development/adt-bundle-mac-x86_64-20140702/sdk/tools:~/Development/adt-bundle-mac-x86_64-20140702/sdk/build-tools:~/Development/adt-bundle-mac-x86_64-20140702/sdk/platform-tools
+export PATH="$PATH":"$HOME/dev/tmrw/aws-mfa-login"
 
-#export JAVA_HOME=/usr/java/jdk1.7.0_25
-#export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_11.jdk/Contents/Home
+export VAGRANT_DEFAULT_PROVIDER="virtualbox"
 
-export WORKON_HOME=~/Envs
-#source /usr/local/bin/virtualenvwrapper.sh
-export HOMEBREW_GITHUB_API_TOKEN=70c14194aff541b96a2ffba573cd1cbd7572bc97
+[[ -r "/etc/profile.d/bash_completion.sh" ]] && . "/etc/profile.d/bash_completion.sh"
+[[ -r "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh" ]] && . "/home/linuxbrew/.linuxbrew/etc/profile.d/bash_completion.sh"
 
 
-if [ -f `brew --prefix`/etc/bash_completion.d/vagrant ]; then
-      source `brew --prefix`/etc/bash_completion.d/vagrant
-fi
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/neilus/.sdkman"
+[[ -s "/home/neilus/.sdkman/bin/sdkman-init.sh" ]] && source "/home/neilus/.sdkman/bin/sdkman-init.sh"
 
-if [ -d ~/bash_completion.d ]; then
-  . ~/bash_completion.d/*
-fi
-export GROOVY_HOME=/usr/local/opt/groovy/libexec
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.8)
+# tabtab source for electron-forge package
+# uninstall by removing these lines or running `tabtab uninstall electron-forge`
+[ -f /Users/neilus/bin/npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash ] && . /Users/neilus/bin/npm/lib/node_modules/electron-forge/node_modules/tabtab/.completions/electron-forge.bash

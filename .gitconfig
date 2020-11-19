@@ -1,6 +1,6 @@
 [user]
 	name = Norbert Sana
-	email = neilus@elte.hu
+	email = sananorbert@gmail.com
 [color]
 	ui = true
 [alias]
@@ -17,4 +17,4 @@
 	required = true
 	process = git-lfs filter-process
 [diff]
-	tool = vimdiff
+  tool = vimdiff

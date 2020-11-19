@@ -12,6 +12,7 @@ set clipboard=unnamed
 au BufRead,BufNewFile *.md set filetype=markdown
 au BufRead,BufNewFile *.markdownd set filetype=markdown
 au BufRead,BufNewFile *.conf set filetype=conf
+au BufRead,BufNewFile *.hcl set filetype=tf set tabstop=4
 " Mouse and backspace
 set mouse=a  " on OSX press ALT and click
 set bs=2     " make backspace behave like normal again
@@ -192,7 +193,7 @@ set nofoldenable
 """execute pathogen#infect()
 """ Compiler output
 Plugin 'mfukar/robotframework-vim'
-call vundle#end() 
+call vundle#end()
 
 """ Ruby and Vagrantfile
 autocmd BufNewFile,BufRead Gemfile set filetype=ruby
@@ -200,3 +201,5 @@ autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 autocmd BufNewFile,BufRead Berksfile set filetype=ruby
 autocmd BufNewFile,BufRead Jenkinsfile set filetype=groovy
 set encoding=utf-8
+
+" Plugin 'psf/black' # no module found ERROR
